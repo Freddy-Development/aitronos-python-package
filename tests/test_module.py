@@ -1,64 +1,74 @@
 import unittest
 from unittest.mock import patch
-import requests
-from FreddyApi import FreddyApi, Message, MessageRequestPayload
+from FreddyApi.module import FreddyApi
+
 
 class TestFreddyApi(unittest.TestCase):
 
     def setUp(self):
-        self.token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNzEwODQ1Mzk2LCJleHAiOjE3MTE0NTAxOTYsImlhdCI6MTcxMDg0NTM5Nn0.msv82ta2LsSxXtELPlE6YPHeaOOYVgV4tXKSq6rW7nw"
-        self.api = FreddyApi(self.token, version="v2.3")
-        self.assistant_id = "asst_nsvUVKcFhDmHEiD0y6uvDu3o"
-        self.messages = [
-            Message(content="Hello!", role="user", type="text"),
-            Message(content="Translate this to German", role="user", type="text")
-        ]
-        self.payload = MessageRequestPayload(
-            assistantId=self.assistant_id,
-            messages=self.messages,
-            instructions="Translate this to German",
-            stream=False
-        )
+        # Set up an instance of FreddyApi with a dummy token
+        self.api = FreddyApi(token="dummy_token")
 
-    @patch('requests.post')  # Correct patching
+    @patch("FreddyApi.module.requests.post")
     def test_send_message_success(self, mock_post):
-        # Mocking the response
-        mock_response = mock_post.return_value
-        mock_response.status_code = 200
-        mock_response.json.return_value = {"response": "success"}
+        # Mock the response of requests.post for a successful API call
+        mock_post.return_value.status_code = 200
+        mock_post.return_value.json.return_value = {"message": "Success"}
 
-        response = self.api.send_message(self.payload)
-        self.assertEqual(response, {"response": "success"})
+        payload = {
+            "organization_id": 0,
+            "assistantId": 15,
+            "model": "gpt-4o",
+            "messages": [
+                {"content": "Hello", "role": "user"}
+            ]
+        }
 
-    @patch('requests.post')  # Correct patching
-    def test_send_message_rate_limit(self, mock_post):
-        # Mocking the response
-        mock_response = mock_post.return_value
-        mock_response.status_code = 200
-        mock_response.json.return_value = {"response": "success"}
+        response = self.api.send_message(payload)
+        self.assertEqual(response, {"message": "Success"})
+        mock_post.assert_called_once()
 
-        # First call should work
-        self.api.send_message(self.payload)
+    @patch("FreddyApi.module.requests.post")
+    def test_send_message_failure(self, mock_post):
+        # Mock the response of requests.post for a failed API call
+        mock_post.return_value.status_code = 400
+        mock_post.return_value.json.return_value = {"error": "Bad Request"}
 
-        # Rate limit should prevent second call
+        payload = {
+            "organization_id": 0,
+            "assistantId": 15,
+            "model": "gpt-4o",
+            "messages": [
+                {"content": "Hello", "role": "user"}
+            ]
+        }
+
         with self.assertRaises(Exception) as context:
-            self.api.send_message(self.payload)
+            self.api.send_message(payload)
 
-        self.assertTrue("Rate limit reached" in str(context.exception))
+        self.assertIn("API request failed", str(context.exception))
+        mock_post.assert_called_once()
 
-    @patch('requests.post')  # Correct patching
-    def test_send_message_error(self, mock_post):
-        # Mocking an error response
-        mock_response = mock_post.return_value
-        mock_response.status_code = 400
-        mock_response.json.return_value = {"error": "Bad Request"}
-        mock_response.raise_for_status.side_effect = requests.exceptions.HTTPError()
+    @patch("FreddyApi.module.requests.get")
+    def test_check_run_status_completed(self, mock_get):
+        # Mock the response for a completed run status
+        mock_get.return_value.status_code = 200
+        mock_get.return_value.json.return_value = {"runStatus": "completed"}
 
-        with self.assertRaises(Exception) as context:
-            self.api.send_message(self.payload)
+        response = self.api.check_run_status(run_key="dummy_run_key", thread_key="dummy_thread_key")
+        self.assertEqual(response, "completed")
+        mock_get.assert_called_once()
 
-        self.assertTrue("API request failed" in str(context.exception))
+    @patch("FreddyApi.module.requests.get")
+    def test_get_run_response(self, mock_get):
+        # Mock the response for getting the final run response
+        mock_get.return_value.status_code = 200
+        mock_get.return_value.json.return_value = {"text": "Hello! How can I assist you today?"}
+
+        response = self.api.get_run_response(organization_id=0, thread_key="dummy_thread_key")
+        self.assertEqual(response["text"], "Hello! How can I assist you today?")
+        mock_get.assert_called_once()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -1,16 +1,10 @@
-Metadata-Version: 2.1
+Metadata-Version: 1.0
 Name: FreddyApi
-Version: 0.1.0
-Summary: A Python package for interacting with the Freddy API
-Home-page: https://github.com/yourusername/FreddyApi
-Author: Your Name
-Author-email: your.email@example.com
-Classifier: Programming Language :: Python :: 3
-Classifier: License :: OSI Approved :: MIT License
-Classifier: Operating System :: OS Independent
-Requires-Python: >=3.6
-Description-Content-Type: text/markdown
-
-# FreddyApi
-
-A Python package for interacting with the Freddy API.
+Version: 0.1
+Summary: A Python client for the Freddy API
+Home-page: aitronos.com
+Author: Phillip Loacker
+Author-email: phillip.loacker@aitronos.com
+License: MIT
+Description: A Python client for the Freddy Core API.
+Platform: UNKNOWN
