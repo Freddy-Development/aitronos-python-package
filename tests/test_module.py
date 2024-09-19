@@ -1,13 +1,13 @@
 import unittest
 from unittest.mock import patch
-from FreddyApi.module import FreddyApi
-
+from FreddyApi.module import FreddyApi, MessageRequestPayload, Message
+from config import Config
 
 class TestFreddyApi(unittest.TestCase):
 
     def setUp(self):
         # Set up an instance of FreddyApi with a dummy token
-        self.api = FreddyApi(token="dummy_token")
+        self.api = FreddyApi(token=Config.load_token())
 
     @patch("FreddyApi.module.requests.post")
     def test_send_message_success(self, mock_post):
@@ -15,14 +15,12 @@ class TestFreddyApi(unittest.TestCase):
         mock_post.return_value.status_code = 200
         mock_post.return_value.json.return_value = {"message": "Success"}
 
-        payload = {
-            "organization_id": 0,
-            "assistantId": 15,
-            "model": "gpt-4o",
-            "messages": [
-                {"content": "Hello", "role": "user"}
-            ]
-        }
+        # Use MessageRequestPayload instead of a plain dictionary
+        payload = MessageRequestPayload(
+            assistantId=15,
+            model="gpt-4o",
+            messages=[Message(content="Hello", role="user")]
+        )
 
         response = self.api.send_message(payload)
         self.assertEqual(response, {"message": "Success"})
@@ -34,14 +32,12 @@ class TestFreddyApi(unittest.TestCase):
         mock_post.return_value.status_code = 400
         mock_post.return_value.json.return_value = {"error": "Bad Request"}
 
-        payload = {
-            "organization_id": 0,
-            "assistantId": 15,
-            "model": "gpt-4o",
-            "messages": [
-                {"content": "Hello", "role": "user"}
-            ]
-        }
+        # Use MessageRequestPayload instead of a plain dictionary
+        payload = MessageRequestPayload(
+            assistantId=15,
+            model="gpt-4o",
+            messages=[Message(content="Hello", role="user")]
+        )
 
         with self.assertRaises(Exception) as context:
             self.api.send_message(payload)

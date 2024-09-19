@@ -2,15 +2,15 @@ from setuptools import setup, find_packages
 
 setup(
     name="FreddyApi",
-    version="0.1.0",
+    version="1.1.3",
     packages=find_packages(),
     install_requires=[],  # List your dependencies here
-    author="Your Name",
-    author_email="your.email@example.com",
+    author="Phillip Loacker",
+    author_email="phillip.loacker@aitronos.com",
     description="A Python package for interacting with the Freddy API",
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/FreddyApi",
+    url="https://github.com/Freddy-Development/aitronos-python-package",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
