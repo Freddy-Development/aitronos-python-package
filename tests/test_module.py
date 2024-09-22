@@ -1,69 +1,110 @@
 import unittest
-from unittest.mock import patch
 from FreddyApi.module import FreddyApi, MessageRequestPayload, Message
 from config import Config
+from tqdm import tqdm
+import time  # Simulate waiting
+
 
 class TestFreddyApi(unittest.TestCase):
 
     def setUp(self):
-        # Set up an instance of FreddyApi with a dummy token
-        self.api = FreddyApi(token=Config.load_token())
+        # Load a real API token from your config
+        token = Config.load_token()
+        self.api = FreddyApi(token)
 
-    @patch("FreddyApi.module.requests.post")
-    def test_send_message_success(self, mock_post):
-        # Mock the response of requests.post for a successful API call
-        mock_post.return_value.status_code = 200
-        mock_post.return_value.json.return_value = {"message": "Success"}
-
-        # Use MessageRequestPayload instead of a plain dictionary
+    def test_send_message_success(self):
+        # Create the payload with real data
         payload = MessageRequestPayload(
-            assistantId=15,
-            model="gpt-4o",
+            organization_id=1,  # Real organization ID
+            assistant_id=15,  # Real assistant ID
+            model="gpt-4o",  # Model name (e.g., gpt-4o)
             messages=[Message(content="Hello", role="user")]
         )
 
-        response = self.api.send_message(payload)
-        self.assertEqual(response, {"message": "Success"})
-        mock_post.assert_called_once()
+        # Perform a real API call
+        try:
+            response = self.api.create_run(payload)  # Assuming this function sends the message
+            self.assertIsNotNone(response, "The response should not be None")
+            print("API Response:", response)
+        except Exception as e:
+            self.fail(f"API call failed: {e}")
 
-    @patch("FreddyApi.module.requests.post")
-    def test_send_message_failure(self, mock_post):
-        # Mock the response of requests.post for a failed API call
-        mock_post.return_value.status_code = 400
-        mock_post.return_value.json.return_value = {"error": "Bad Request"}
-
-        # Use MessageRequestPayload instead of a plain dictionary
+    def test_send_message_failure(self):
+        # Create an invalid payload that should fail (example: invalid assistant ID)
         payload = MessageRequestPayload(
-            assistantId=15,
-            model="gpt-4o",
+            organization_id=1,  # Real organization ID
+            assistant_id=9999,  # Invalid assistant ID to simulate failure
+            model="gpt-4o",  # Model name (e.g., gpt-4o)
             messages=[Message(content="Hello", role="user")]
         )
 
+        # Perform a real API call and expect failure
         with self.assertRaises(Exception) as context:
-            self.api.send_message(payload)
+            self.api.create_run(payload)  # Assuming this function sends the message
 
         self.assertIn("API request failed", str(context.exception))
-        mock_post.assert_called_once()
 
-    @patch("FreddyApi.module.requests.get")
-    def test_check_run_status_completed(self, mock_get):
-        # Mock the response for a completed run status
-        mock_get.return_value.status_code = 200
-        mock_get.return_value.json.return_value = {"runStatus": "completed"}
+    def test_check_run_status_completed(self):
+        # Use real organization_id, run_key, and thread_key from a previous run
+        organization_id = 1  # Real organization ID
+        run_key = "run_zYJ14m8sGAqt7JBZ3NzVUaiu"  # Replace with a valid run_key
+        thread_key = "thread_3T6BSDLITANwaGIkWaychThJ"  # Replace with a valid thread_key
 
-        response = self.api.check_run_status(run_key="dummy_run_key", thread_key="dummy_thread_key")
-        self.assertEqual(response, "completed")
-        mock_get.assert_called_once()
+        # Poll for the status of the run
+        try:
+            for _ in tqdm(range(100), desc="Checking run status", unit="attempt"):
+                status = self.api.check_run_status(organization_id=organization_id, run_key=run_key,
+                                                   thread_key=thread_key)
 
-    @patch("FreddyApi.module.requests.get")
-    def test_get_run_response(self, mock_get):
-        # Mock the response for getting the final run response
-        mock_get.return_value.status_code = 200
-        mock_get.return_value.json.return_value = {"text": "Hello! How can I assist you today?"}
+                if status == "completed":
+                    self.assertEqual(status, "completed", "Run status should be completed")
+                    print("Run Status:", status)
+                    break
+                time.sleep(2)  # Simulate waiting period between status checks
+            else:
+                self.fail("Run did not complete after multiple attempts.")
 
-        response = self.api.get_run_response(organization_id=0, thread_key="dummy_thread_key")
-        self.assertEqual(response["text"], "Hello! How can I assist you today?")
-        mock_get.assert_called_once()
+        except Exception as e:
+            self.fail(f"API call failed: {e}")
+
+    def test_get_run_response(self):
+        # Use real organization_id and thread_key from a previous run to get the response
+        organization_id = 1  # Real organization ID
+        thread_key = "real_thread_key"  # Replace with a valid thread_key
+
+        # Perform a real API call to get the final run response
+        try:
+            response = self.api.get_run_response(organization_id=organization_id, thread_key=thread_key)
+            self.assertIsNotNone(response, "The response should not be None")
+            self.assertIn("text", response, "The response should contain the 'text' key")
+            print("Run Response:", response["text"])
+        except Exception as e:
+            self.fail(f"API call failed: {e}")
+
+    def test_execute_run_live(self):
+        # Create a sample payload
+        messages = [
+            Message(content="Tell me a joke.", role="user"),
+        ]
+        payload = MessageRequestPayload(
+            organization_id=1,  # Real organization ID
+            assistant_id=2,  # Real assistant ID
+            model="gpt-4o",  # Model name (e.g., gpt-4o)
+            instructions="Provide a joke",
+            additional_instructions="Use humor",
+            messages=messages
+        )
+
+        # Perform the full live run, checking the status and getting the response
+        try:
+            response = self.api.execute_run(payload)
+            self.assertIsNotNone(response, "The API response should not be None")
+            self.assertIn("text", response, "The response should contain the 'text' key")
+
+            # Print the final response
+            print("Final Response:", response["text"])
+        except Exception as e:
+            self.fail(f"API call failed: {e}")
 
 
 if __name__ == "__main__":

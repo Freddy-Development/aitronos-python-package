@@ -17,6 +17,13 @@ def get_current_version(setup_file):
         raise ValueError("Version number not found in setup.py")
 
 
+def run_tests():
+    """Run the tests to ensure everything is working before updating the version."""
+    print("Running tests...")
+    subprocess.run(["python3", "-m", "unittest", "discover", "-s", "tests"], check=True)
+    print("All tests passed.")
+
+
 def bump_version(version, part):
     """Bump the version number."""
     major, minor, patch = map(int, version.split("."))
@@ -79,6 +86,10 @@ def main():
     parser = argparse.ArgumentParser(description="Update the version, build, and upload the package to PyPI.")
     parser.add_argument("part", choices=["major", "minor", "patch"], help="Which part of the version to bump.")
     args = parser.parse_args()
+
+    # only start if all tests pass
+    # Step 0: Run tests
+    run_tests()
 
     # Step 1: Get the current version
     current_version = get_current_version(SETUP_FILE)
