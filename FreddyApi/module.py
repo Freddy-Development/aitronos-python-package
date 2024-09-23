@@ -3,12 +3,14 @@ import requests
 from dataclasses import dataclass, field
 from typing import List, Optional, Union, Dict
 import logging
+import httpx
+import regex as re
 import json
 
 # Setup basic logging
 logging.basicConfig(level=logging.DEBUG)  # You can change this to INFO or ERROR for less verbosity
 log = logging.getLogger(__name__)
-
+json_pattern = re.compile(r'\{[^{}]*\}|\[[^\[\]]*\]')
 
 @dataclass
 class Message:
@@ -52,6 +54,43 @@ class MessageRequestPayload:
         }
         # Remove any keys with None values to avoid sending unnecessary data
         return {k: v for k, v in payload.items() if v is not None}
+
+
+# Define a proper class to represent the structure of the streamed response
+class StreamEvent:
+    def __init__(self, event: str, status: Optional[str], is_response: bool, response: Optional[str], thread_id: int):
+        self.event = event
+        self.status = status
+        self.is_response = is_response
+        self.response = response
+        self.thread_id = thread_id
+
+    def __repr__(self):
+        return f"<StreamEvent event={self.event} status={self.status} response={self.response} thread_id={self.thread_id}>"
+
+    @classmethod
+    def from_json(cls, data: dict):
+        return cls(
+            event=data.get("event"),
+            status=data.get("status"),
+            is_response=data.get("isResponse", False),
+            response=data.get("response"),
+            thread_id=data.get("threadId")
+        )
+
+
+def is_valid_json(data):
+    """
+    Check if a given string is a complete and valid JSON object.
+    This method checks if there are balanced braces or brackets.
+    """
+    try:
+        json.loads(data)
+        return True
+    except json.JSONDecodeError:
+        return False
+
+
 class FreddyApi:
     BASE_URLS = {
         "v1": "https://freddy-core-api.azurewebsites.net/v1"
@@ -77,53 +116,64 @@ class FreddyApi:
         }
         self.rate_limit_reached = False
 
-    def create_stream(self, payload: MessageRequestPayload, callback: callable) -> None:
+    def create_stream(self, payload: "MessageRequestPayload", callback: callable) -> None:
         """
         Initiates a streaming API request that streams the response word by word over time.
 
         :param payload: A MessageRequestPayload object containing the request data
-        :param callback: A callable function that processes each streamed JSON object as it arrives
+        :param callback: A callable function that processes each streamed StreamEvent object as it arrives
         """
         url = f"{self.base_url}/messages/run-stream"
-        data = payload.to_dict()
+        data = payload.to_dict()  # Convert payload to dictionary
+
+        # Ensure token is properly formatted and stripped of extra spaces
+        headers = {
+            "Authorization": f"Bearer {self.token.strip()}",
+            "Content-Type": "application/json"
+        }
 
         try:
-            # Send POST request to the /messages/run-stream endpoint
-            with requests.post(url, headers=self.headers, json=data, stream=True) as response:
+            # Increase the timeout for the client (e.g., 60 seconds)
+            timeout = httpx.Timeout(60.0)  # Adjust this as necessary
 
-                if response.status_code == 200:
+            # Create an HTTPX client for streaming with increased timeout
+            with httpx.Client(timeout=timeout) as client:
+                with client.stream("POST", url, json=data, headers=headers) as response:
 
-                    buffer = ""
-                    # Process streaming response
-                    for chunk in response.iter_lines():
-                        if chunk:
-                            # Decode and accumulate chunk in buffer
-                            buffer += chunk.decode('utf-8')
+                    # Raise an error if the response status code is not 200
+                    response.raise_for_status()
 
-                            try:
-                                # Try to parse the accumulated buffer as JSON
-                                json_data = json.loads(buffer)
-                                # Pass the complete JSON object to the callback
-                                callback(json_data)
-                                # Clear the buffer after processing the JSON object
-                                buffer = ""
-                            except json.JSONDecodeError:
-                                # If the buffer does not yet form a valid JSON object, keep accumulating
-                                continue
-                else:
-                    # Handle non-200 responses and log errors
-                    try:
-                        error_message = response.json().get("error", response.text)
-                    except ValueError:
-                        error_message = response.text  # Fallback to raw text if JSON decoding fails
-                    log.error(f"API request failed with status {response.status_code}: {error_message}")
-                    raise Exception(f"API request failed with status {response.status_code}: {error_message}")
+                    buffer = ""  # Buffer to accumulate chunks of data
 
-        except requests.RequestException as e:
-            # Handle request exceptions, e.g., network issues
-            log.error(f"An error occurred during the streaming API request: {str(e)}")
-            raise Exception(f"An error occurred during the streaming API request: {str(e)}")
+                    # Iterate over the streamed response content
+                    for chunk in response.iter_text():
+                        buffer += chunk  # Append the chunk to the buffer
 
+                        # Use regex to find all complete JSON objects or arrays in the buffer
+                        matches = list(re.finditer(json_pattern, buffer))
+
+                        if matches:  # Only process if there are matches
+                            for match in matches:
+                                json_str = match.group()  # Extract the matched JSON string
+
+                                try:
+                                    # Parse the extracted JSON
+                                    json_data = json.loads(json_str)
+
+                                    # Convert the JSON to a StreamEvent class instance (or handle as needed)
+                                    event = StreamEvent.from_json(json_data)
+
+                                    # Invoke the callback with the parsed event data
+                                    callback(event)
+
+                                except json.JSONDecodeError as e:
+                                    log.error(f"Failed to decode JSON: {e}")
+
+                            # Remove the matched portion from the buffer to prevent reprocessing
+                            buffer = buffer[matches[-1].end():]
+
+        except httpx.RequestError as e:
+            log.error(f"Request failed: {e}")
 
     def create_run(self, payload: MessageRequestPayload) -> Union[Dict, None]:
         """
