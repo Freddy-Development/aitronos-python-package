@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: Aitronos
-Version: 1.1.16
+Version: 4.0.0
 Summary: A Python package for interacting with the Freddy API
 Home-page: https://github.com/Freddy-Development/aitronos-python-package
 Author: Phillip Loacker

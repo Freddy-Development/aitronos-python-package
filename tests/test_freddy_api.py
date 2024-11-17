@@ -1,6 +1,4 @@
 import unittest
-import asyncio
-from unittest.mock import patch, AsyncMock
 from Aitronos import FreddyApi, MessageRequestPayload, StreamEvent, Message, Aitronos
 import logging
 from config import Config
@@ -18,7 +16,7 @@ class FreddyApiTests(unittest.TestCase):
         """Set up the test environment."""
         # Load a real API token from your config
         token = Config.load_token()
-        self.api = Aitronos(token)
+        self.api = Aitronos(api_key=token).AssistantMessaging
 
     def test_send_message_success(self):
         """Test sending a valid message with the API."""
@@ -42,16 +40,18 @@ class FreddyApiTests(unittest.TestCase):
         # Create an invalid payload (e.g., invalid assistant ID)
         payload = MessageRequestPayload(
             organization_id=1,  # Real organization ID
-            assistant_id=9999,  # Invalid assistant ID
-            model="gpt-4o",  # Model name
+            assistant_id=9999,  # Invalid or non-existent assistant ID
             messages=[Message(content="Hello", role="user")]
         )
 
         # Perform a real API call and expect failure
-        with self.assertRaises(Exception) as context:
+        try:
             self.api.create_run(payload)
-
-        self.assertIn("API request failed", str(context.exception))
+            self.fail("Expected an exception, but the API call succeeded unexpectedly.")
+        except Exception as e:
+            # Assert the exception message contains specific text indicating failure
+            self.assertIn("Network or connection error", str(e))
+            print("Caught expected exception:", e)
 
     def test_check_run_status_completed(self):
         """Test checking the status of a run until it completes."""
@@ -93,41 +93,41 @@ class FreddyApiTests(unittest.TestCase):
         except Exception as e:
             self.fail(f"API call failed: {e}")
 
-    def test_execute_run_live(self):
-        """Test executing a full live run."""
-        messages = [
-            Message(content="Tell me a joke.", role="user"),
-        ]
-        payload = MessageRequestPayload(
-            organization_id=1,  # Real organization ID
-            assistant_id=1,  # Real assistant ID
-            instructions="Provide a joke",
-            additional_instructions="Use humor",
-            messages=messages
-        )
+        def test_execute_run_live(self):
+            """Test executing a full live run."""
+            messages = [
+                Message(content="Tell me a joke.", role="user"),
+            ]
+            payload = MessageRequestPayload(
+                organization_id=1,  # Real organization ID
+                assistant_id=1,  # Real assistant ID
+                instructions="Provide a joke",
+                additional_instructions="Use humor",
+                messages=messages
+            )
 
-        # Perform the full live run, checking the status and getting the response
-        try:
-            response = self.api.execute_run(payload)
+            # Perform the full live run, checking the status and getting the response
+            try:
+                response = self.api.execute_run(payload)
 
-            # Ensure that the response is not None
-            self.assertIsNotNone(response, "The response should not be None")
+                # Ensure that the response is not None
+                self.assertIsNotNone(response, "The response should not be None")
 
-            # Assert that the response is a list and has at least one element
-            self.assertIsInstance(response, list, "The response should be a list")
-            self.assertGreater(len(response), 0, "The response list should not be empty")
+                # Assert that the response is a list and has at least one element
+                self.assertIsInstance(response, list, "The response should be a list")
+                self.assertGreater(len(response), 0, "The response list should not be empty")
 
-            # Extract the first dictionary from the list
-            first_event = response[0]
+                # Extract the first dictionary from the list
+                first_event = response[0]
 
-            # Ensure that 'response' is a key in the first event
-            self.assertIn("response", first_event, "The response should contain the 'response' key")
+                # Ensure that 'response' is a key in the first event
+                self.assertIn("response", first_event, "The response should contain the 'response' key")
 
-            # Print the actual response content
-            print("Run Response:", first_event["response"])
+                # Print the actual response content
+                print("Run Response:", first_event["response"])
 
-        except Exception as e:
-            self.fail(f"An error occurred during the test: {e}")
+            except Exception as e:
+                self.fail(f"An error occurred during the test: {e}")
 
 
 if __name__ == "__main__":

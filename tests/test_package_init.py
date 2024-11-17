@@ -3,12 +3,13 @@ import logging
 
 # Importing everything from Aitronos to test if the package setup is correct
 try:
-    from Aitronos import FreddyApi, MessageRequestPayload, StreamEvent, Message, Aitronos
+    from Aitronos import FreddyApi, MessageRequestPayload, StreamEvent, Message, Aitronos, StreamLine
 except ImportError as e:
     raise ImportError(f"Failed to import from Aitronos package: {e}")
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
+
 
 class PackageSetupTests(unittest.TestCase):
     """Test suite to validate the setup of the Aitronos package."""
@@ -53,6 +54,7 @@ class PackageSetupTests(unittest.TestCase):
 
         except Exception as e:
             self.fail(f"Package setup test failed: {e}")
+
 
 if __name__ == "__main__":
     unittest.main()

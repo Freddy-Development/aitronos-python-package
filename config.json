@@ -1,3 +1,11 @@
 {
-    "test_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEyIiwiSXNBZG1pbiI6IkZhbHNlIiwibmJmIjoxNzI2NTU1NjA0LCJleHAiOjE3MjkxNDc2MDQsImlhdCI6MTcyNjU1NTYwNH0.LWY8KnNR1k5qe-jtjKdribai58Fo9BqIG7MSTe73huE"
+    "test_key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIxOCIsIklzQWRtaW4iOiJUcnVlIiwibmJmIjoxNzI5MzU4NDc3LCJleHAiOjE3MzE5NTA0NzcsImlhdCI6MTcyOTM1ODQ3N30.bJL1Aw7PtE6-5KYyCOVy4FYgUWaDTT0tBhDCR9jUexA",
+    "test_email": "phillip.loacker@alturos.com",
+    "test_password": "Schiller123!",
+    "test_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIxOCIsIklzQWRtaW4iOiJUcnVlIiwibmJmIjoxNzI5MzU4NDc3LCJleHAiOjE3MzE5NTA0NzcsImlhdCI6MTcyOTM1ODQ3N30.bJL1Aw7PtE6-5KYyCOVy4FYgUWaDTT0tBhDCR9jUexA",
+    "user_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjI0OSIsIklzQWRtaW4iOiJGYWxzZSIsIm5iZiI6MTczMTc3OTk4MCwiZXhwIjoxNzM0MzcxOTgwLCJpYXQiOjE3MzE3Nzk5ODB9.Zy4_iX654rEDFfTasJsOdP6qLwIc8jAmBUxUakSB-fA",
+    "test_user_id": 225,
+    "test_username": "phillip.loacker",
+    "test_email": "phillip.loacker@aitronos.com",
+    "test_full_name": "Phillip Loacker"
 }

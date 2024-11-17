@@ -1,4 +1,4 @@
-class AppHive:
+class StreamLine:
     """
     A Python translation of the AppHive class.
     """

@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="FreddyApi",
-    version="1.1.5",
+    name="Aitronos",
+    version="4.0.0",
     packages=find_packages(),
     install_requires=[],  # List your dependencies here
     author="Phillip Loacker",
