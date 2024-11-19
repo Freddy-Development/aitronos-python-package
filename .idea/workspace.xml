@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a08f92a9-c8c4-4d6d-82e3-8192184725b5" name="Changes" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/Aitronos.egg-info/PKG-INFO" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Aitronos.egg-info/SOURCES.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Aitronos.egg-info/dependency_links.txt" afterDir="false" />
@@ -53,6 +54,8 @@
       <change beforePath="$PROJECT_DIR$/tests/AppHive/test_authentication.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/AppHive/test_authentication.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/update_version.py" beforeDir="false" afterPath="$PROJECT_DIR$/update_version.py" afterDir="false" />
 =======
+=======
+>>>>>>> origin/main
       <change beforePath="$PROJECT_DIR$/.idea/Aitronos-python-package.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Aitronos-python-package.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
@@ -375,6 +378,9 @@
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/pip/_vendor/urllib3/request.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/pip/_vendor/urllib3/request.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/pip/_vendor/urllib3/util/retry.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/pip/_vendor/urllib3/util/retry.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/pip/_vendor/vendor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.12/site-packages/pip/_vendor/vendor.txt" afterDir="false" />
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -437,6 +443,7 @@
     </key>
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <component name="RunManager" selected="Python tests.pytest for test_freddy_api.FreddyApiTests">
     <configuration name="pytest for test_authentication.TestAuthentication" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="aitronos-python-package" />
@@ -494,6 +501,10 @@
   <component name="RunManager" selected="Python tests.pytest for test_userManagement.UserManagementTests">
     <configuration name="pytest for test_userManagement.UserManagementTests" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
 >>>>>>> origin/main
+=======
+  <component name="RunManager" selected="Python tests.pytest for test_userManagement.UserManagementTests">
+    <configuration name="pytest for test_userManagement.UserManagementTests" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+>>>>>>> origin/main
       <module name="aitronos-python-package" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -507,11 +518,19 @@
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <option name="_new_target" value="&quot;test_freddy_api.FreddyApiTests&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="pytest for test_freddy_api.FreddyApiTests.test_send_message_success" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+=======
+      <option name="_new_target" value="&quot;test_userManagement.UserManagementTests&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_userManagement.UserManagementTests.test_get_detailed_user_profile" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+>>>>>>> origin/main
 =======
       <option name="_new_target" value="&quot;test_userManagement.UserManagementTests&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
@@ -531,6 +550,7 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
+<<<<<<< HEAD
 <<<<<<< HEAD
       <option name="_new_target" value="&quot;test_freddy_api.FreddyApiTests.test_send_message_success&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
@@ -633,11 +653,98 @@
     </list>
     <recent_temporary>
       <list>
+=======
+      <option name="_new_target" value="&quot;test_userManagement.UserManagementTests.test_get_detailed_user_profile&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_userManagement.UserManagementTests.test_register_user" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="aitronos-python-package" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_userManagement.UserManagementTests.test_register_user&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_userManagement.UserManagementTests.test_update_user_profile" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="aitronos-python-package" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_userManagement.UserManagementTests.test_update_user_profile&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_userManagement.UserManagementTests.test_update_username" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="aitronos-python-package" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_userManagement.UserManagementTests.test_update_username&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for tests.test_authentication" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="aitronos-python-package" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/AppHive" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_authentication&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python tests.pytest for tests.test_authentication" />
+      <item itemvalue="Python tests.pytest for test_userManagement.UserManagementTests" />
+      <item itemvalue="Python tests.pytest for test_userManagement.UserManagementTests.test_get_detailed_user_profile" />
+      <item itemvalue="Python tests.pytest for test_userManagement.UserManagementTests.test_register_user" />
+      <item itemvalue="Python tests.pytest for test_userManagement.UserManagementTests.test_update_user_profile" />
+      <item itemvalue="Python tests.pytest for test_userManagement.UserManagementTests.test_update_username" />
+    </list>
+    <recent_temporary>
+      <list>
+>>>>>>> origin/main
         <item itemvalue="Python tests.pytest for test_userManagement.UserManagementTests" />
         <item itemvalue="Python tests.pytest for test_userManagement.UserManagementTests.test_update_user_profile" />
         <item itemvalue="Python tests.pytest for test_userManagement.UserManagementTests.test_update_username" />
         <item itemvalue="Python tests.pytest for test_userManagement.UserManagementTests.test_register_user" />
         <item itemvalue="Python tests.pytest for test_userManagement.UserManagementTests.test_get_detailed_user_profile" />
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
       </list>
     </recent_temporary>
@@ -679,7 +786,11 @@
       <workItem from="1731848796494" duration="1086000" />
       <workItem from="1731852426801" duration="1260000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1731874265494" duration="3705000" />
+=======
+      <workItem from="1731874265494" duration="599000" />
+>>>>>>> origin/main
 =======
       <workItem from="1731874265494" duration="599000" />
 >>>>>>> origin/main
@@ -712,11 +823,14 @@
           <option name="timeStamp" value="33" />
         </line-breakpoint>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tests/AppHive/test_authentication.py</url>
           <line>43</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
+=======
+>>>>>>> origin/main
 =======
 >>>>>>> origin/main
       </breakpoints>
@@ -732,9 +846,15 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/aitronos_python_package$.coverage" NAME=" Coverage Results" MODIFIED="1731657153015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_userManagement_UserManagementTests_test_update_username.coverage" NAME="pytest for test_userManagement.UserManagementTests.test_update_username Coverage Results" MODIFIED="1731834424070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_authentication_TestAuthentication_test_login_invalid_credentials_with_aitronos.coverage" NAME="pytest for test_authentication.TestAuthentication.test_login_invalid_credentials_with_aitronos Coverage Results" MODIFIED="1731954223549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/AppHive" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_freddy_api_FreddyApiTests.coverage" NAME="pytest for test_freddy_api.FreddyApiTests Coverage Results" MODIFIED="1731955275538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+=======
+    <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_authentication_TestAuthentication_test_login_invalid_credentials_with_aitronos.coverage" NAME="pytest for test_authentication.TestAuthentication.test_login_invalid_credentials_with_aitronos Coverage Results" MODIFIED="1731782798267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/AppHive" />
+    <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_userManagement_UserManagementTests_test_update_username.coverage" NAME="pytest for test_userManagement.UserManagementTests.test_update_username Coverage Results" MODIFIED="1731834424070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_freddy_api_FreddyApiTests.coverage" NAME="pytest for test_freddy_api.FreddyApiTests Coverage Results" MODIFIED="1731832932627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+>>>>>>> origin/main
 =======
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_authentication_TestAuthentication_test_login_invalid_credentials_with_aitronos.coverage" NAME="pytest for test_authentication.TestAuthentication.test_login_invalid_credentials_with_aitronos Coverage Results" MODIFIED="1731782798267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/AppHive" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_userManagement_UserManagementTests_test_update_username.coverage" NAME="pytest for test_userManagement.UserManagementTests.test_update_username Coverage Results" MODIFIED="1731834424070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
@@ -751,32 +871,44 @@
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_authentication_TestAuthentication_test_login_success.coverage" NAME="pytest for test_authentication.TestAuthentication.test_login_success Coverage Results" MODIFIED="1731779580728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/AppHive" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_module_TestFreddyApi_test_get_run_response.coverage" NAME="pytest for test_module.TestFreddyApi.test_get_run_response Coverage Results" MODIFIED="1727091170053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_freddy_api_FreddyApiTests_test_send_message_success.coverage" NAME="pytest for test_freddy_api.FreddyApiTests.test_send_message_success Coverage Results" MODIFIED="1731955262747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_package_init_PackageSetupTests.coverage" NAME="pytest for test_package_init.PackageSetupTests Coverage Results" MODIFIED="1731832926903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_FreddyApi_packageTests_FreddyApiTests.coverage" NAME="pytest for tests.test_freddy_api.FreddyApiTests Coverage Results" MODIFIED="1731710811481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_in_test_package_init_py.coverage" NAME="pytest in test_package_init.py Coverage Results" MODIFIED="1731759552185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_authentication_TestAuthentication_test_login_success_real_request.coverage" NAME="pytest for test_authentication.TestAuthentication.test_login_success_real_request Coverage Results" MODIFIED="1731954621574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/AppHive" />
 =======
+=======
+>>>>>>> origin/main
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_freddy_api_FreddyApiTests_test_send_message_success.coverage" NAME="pytest for test_freddy_api.FreddyApiTests.test_send_message_success Coverage Results" MODIFIED="1731831746384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_package_init_PackageSetupTests.coverage" NAME="pytest for test_package_init.PackageSetupTests Coverage Results" MODIFIED="1731832926903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_FreddyApi_packageTests_FreddyApiTests.coverage" NAME="pytest for tests.test_freddy_api.FreddyApiTests Coverage Results" MODIFIED="1731710811481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_in_test_package_init_py.coverage" NAME="pytest in test_package_init.py Coverage Results" MODIFIED="1731759552185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_authentication_TestAuthentication_test_login_success_real_request.coverage" NAME="pytest for test_authentication.TestAuthentication.test_login_success_real_request Coverage Results" MODIFIED="1731784174433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/AppHive" />
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
     <SUITE FILE_PATH="coverage/aitronos_python_package$private_test.coverage" NAME="private_test Coverage Results" MODIFIED="1728468743735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1731777389731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Aitronos/AppHive" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_in_test_freddy_api_py.coverage" NAME="pytest in test_freddy_api.py Coverage Results" MODIFIED="1731710882100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_in_test_authentication_py.coverage" NAME="pytest in test_authentication.py Coverage Results" MODIFIED="1731778265626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/AppHive" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_authentication_TestAuthentication_test_login_success_with_aitronos.coverage" NAME="pytest for test_authentication.TestAuthentication.test_login_success_with_aitronos Coverage Results" MODIFIED="1731954152703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/AppHive" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$helper.coverage" NAME="helper Coverage Results" MODIFIED="1731776187172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Aitronos/AppHive" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_userManagement_UserManagementTests_test_check_username_duplication.coverage" NAME="pytest for test_userManagement.UserManagementTests.test_check_username_duplication Coverage Results" MODIFIED="1731833944567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_authentication_TestAuthentication.coverage" NAME="pytest for test_authentication.TestAuthentication Coverage Results" MODIFIED="1731954625096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/AppHive" />
 =======
+=======
+>>>>>>> origin/main
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_authentication_TestAuthentication_test_login_success_with_aitronos.coverage" NAME="pytest for test_authentication.TestAuthentication.test_login_success_with_aitronos Coverage Results" MODIFIED="1731782702662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/AppHive" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$helper.coverage" NAME="helper Coverage Results" MODIFIED="1731776187172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Aitronos/AppHive" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_authentication_TestAuthentication.coverage" NAME="pytest for test_authentication.TestAuthentication Coverage Results" MODIFIED="1731832652322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/AppHive" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_userManagement_UserManagementTests_test_check_username_duplication.coverage" NAME="pytest for test_userManagement.UserManagementTests.test_check_username_duplication Coverage Results" MODIFIED="1731833944567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
     <SUITE FILE_PATH="coverage/Aitronos_python_package$.coverage" NAME=" Coverage Results" MODIFIED="1726927678270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$Authentication.coverage" NAME="Authentication Coverage Results" MODIFIED="1731776493167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Aitronos/AppHive/Authentication" />
@@ -788,7 +920,11 @@
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_authentication_TestAuthentication_test_login_network_issue_with_aitronos.coverage" NAME="pytest for test_authentication.TestAuthentication.test_login_network_issue_with_aitronos Coverage Results" MODIFIED="1731784006243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/AppHive" />
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_userManagement_UserManagementTests.coverage" NAME="pytest for test_userManagement.UserManagementTests Coverage Results" MODIFIED="1731834455820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_authentication_TestAuthentication_test_login_invalid_response_with_aitronos.coverage" NAME="pytest for test_authentication.TestAuthentication.test_login_invalid_response_with_aitronos Coverage Results" MODIFIED="1731954227016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/AppHive" />
+=======
+    <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_authentication_TestAuthentication_test_login_invalid_response_with_aitronos.coverage" NAME="pytest for test_authentication.TestAuthentication.test_login_invalid_response_with_aitronos Coverage Results" MODIFIED="1731783758763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/AppHive" />
+>>>>>>> origin/main
 =======
     <SUITE FILE_PATH="coverage/aitronos_python_package$pytest_for_test_authentication_TestAuthentication_test_login_invalid_response_with_aitronos.coverage" NAME="pytest for test_authentication.TestAuthentication.test_login_invalid_response_with_aitronos Coverage Results" MODIFIED="1731783758763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/AppHive" />
 >>>>>>> origin/main

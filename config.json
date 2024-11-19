@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "test_key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIyNSIsIklzQWRtaW4iOiJUcnVlIiwibmJmIjoxNzMxOTU1MTk4LCJleHAiOjE3MzQ1NDcxOTgsImlhdCI6MTczMTk1NTE5OH0.dcx4FLtZn94jEOgvgmBdWKjGpzllKRTsI6ywzReW2lg",
     "test_email": "phillip.loacker@aitronos.com",
     "test_password": "Schiller123!",
@@ -8,6 +9,8 @@
     "test_user_id": 225,
     "test_username": "phillip.loacker",
 =======
+=======
+>>>>>>> origin/main
     "test_key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIxOCIsIklzQWRtaW4iOiJUcnVlIiwibmJmIjoxNzI5MzU4NDc3LCJleHAiOjE3MzE5NTA0NzcsImlhdCI6MTcyOTM1ODQ3N30.bJL1Aw7PtE6-5KYyCOVy4FYgUWaDTT0tBhDCR9jUexA",
     "test_email": "phillip.loacker@alturos.com",
     "test_password": "Schiller123!",
@@ -16,6 +19,9 @@
     "test_user_id": 225,
     "test_username": "phillip.loacker",
     "test_email": "phillip.loacker@aitronos.com",
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
     "test_full_name": "Phillip Loacker"
 }
