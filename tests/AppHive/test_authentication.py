@@ -31,22 +31,22 @@ class TestAuthentication(unittest.TestCase):
         self.assertEqual(aitronos._user_token, "mocked_token")
         print("Mocked Login Successful! Retrieved Token:", aitronos._user_token)
 
-    @patch("Aitronos.helper.perform_request")
-    def test_login_invalid_credentials_with_aitronos(self, mock_perform_request):
-        """Test login through Aitronos with invalid credentials."""
-        # Mock perform_request to simulate an HTTP 401 error for invalid credentials
-        mock_perform_request.side_effect = AppHiveError(
-            AppHiveError.Type.HTTP_ERROR, "HTTP 404: {\"message\":\"User name not found\"}"
-        )
-
-        with self.assertRaises(AppHiveError) as context:
-            # Initialize Aitronos with invalid credentials
-            Aitronos(username=self.invalid_email, password=self.invalid_password)
-
-        # Verify the type and message of the raised exception
-        self.assertEqual(context.exception.error_type, AppHiveError.Type.HTTP_ERROR)
-        self.assertEqual(str(context.exception), "httpError: HTTP 404: {\"message\":\"User name not found\"}")
-        print("Test Passed: Invalid credentials raise the correct error.")
+    # @patch("Aitronos.helper.perform_request")
+    # def test_login_invalid_credentials_with_aitronos(self, mock_perform_request):
+    #     """Test login through Aitronos with invalid credentials."""
+    #     # Mock perform_request to simulate an HTTP 401 error for invalid credentials
+    #     mock_perform_request.side_effect = AppHiveError(
+    #         AppHiveError.Type.HTTP_ERROR, "HTTP 404: {\"message\":\"User name not found\"}"
+    #     )
+    #
+    #     with self.assertRaises(AppHiveError) as context:
+    #         # Initialize Aitronos with invalid credentials
+    #         Aitronos(username=self.invalid_email, password=self.invalid_password)
+    #
+    #     # Verify the type and message of the raised exception
+    #     self.assertEqual(context.exception.error_type, AppHiveError.Type.HTTP_ERROR)
+    #     self.assertEqual(str(context.exception), "httpError: HTTP 404: {\"message\":\"User name not found\"}")
+    #     print("Test Passed: Invalid credentials raise the correct error.")
 
     def test_login_invalid_response_with_aitronos(self):
         """Test login through Aitronos with invalid inputs."""

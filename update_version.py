@@ -1,8 +1,12 @@
+import os
 import re
+import shutil
 import subprocess
 import argparse
 
 SETUP_FILE = "setup.py"
+DIST_DIR = "dist"
+
 
 def get_current_version(setup_file):
     """Extract the current version number from setup.py."""
@@ -59,6 +63,15 @@ def update_setup_file(setup_file, new_version):
         file.write(updated_content)
 
 
+def clean_dist_directory():
+    """Remove all files in the dist/ directory."""
+    if os.path.exists(DIST_DIR):
+        print(f"Cleaning the {DIST_DIR} directory...")
+        shutil.rmtree(DIST_DIR)
+    os.makedirs(DIST_DIR)
+    print(f"{DIST_DIR} directory is now clean.")
+
+
 def build_package():
     """Build the source distribution and wheel."""
     print("Building the package...")
@@ -69,7 +82,7 @@ def build_package():
 def upload_package():
     """Upload the package to PyPI using twine."""
     print("Uploading the package to PyPI...")
-    subprocess.run(["twine", "upload", "dist/*"], check=True)
+    subprocess.run(["twine", "upload", f"{DIST_DIR}/*"], check=True)
     print("Package uploaded successfully.")
 
 
@@ -87,7 +100,6 @@ def main():
     parser.add_argument("part", choices=["major", "minor", "patch"], help="Which part of the version to bump.")
     args = parser.parse_args()
 
-    # only start if all tests pass
     # Step 0: Run tests
     run_tests()
 
@@ -103,22 +115,18 @@ def main():
     update_setup_file(SETUP_FILE, new_version)
     print(f"Updated {SETUP_FILE} with version {new_version}")
 
-    # Step 4: Build the package
+    # Step 4: Clean the dist/ directory
+    clean_dist_directory()
+
+    # Step 5: Build the package
     build_package()
 
-    # Step 5: Upload the package to PyPI
+    # Step 6: Upload the package to PyPI
     upload_package()
 
-    # Step 6: (Optional) Tag the new version in Git
-    # tag_version_in_git(new_version) # skip for now, not ready yeet
+    # Step 7: (Optional) Tag the new version in Git
+    # tag_version_in_git(new_version) # Uncomment to enable tagging
 
 
 if __name__ == "__main__":
     main()
-
-
-# how to use
-
-# python3 update_version.py patch   # Increment the patch version
-# python3 update_version.py minor   # Increment the minor version
-# python3 update_version.py major   # Increment the major version
