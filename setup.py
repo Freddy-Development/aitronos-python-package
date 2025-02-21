@@ -6,7 +6,7 @@ with open('requirements.txt') as f:
 
 setup(
     name="aitronos",
-    version="4.2.0",
+    version="4.3.0",
     packages=find_packages(),
     package_data={
         'aitronos': [
