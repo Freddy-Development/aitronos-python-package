@@ -1,95 +1,78 @@
-from Aitronos.AppHive.helper import AppHiveError
-from Aitronos.AppHive.authentication import Authentication, LoginResponse, RefreshToken
-from Aitronos.AppHive.UserManagement import Address, ProfileImage, UpdateUserProfileRequest, UserManagement
+"""
+AppHive module for the Aitronos package.
+"""
 
-__all__ = [
-    "AppHive",
-    "LoginResponse",
-    "RefreshToken",
-    "AppHiveError",
-    "Address",
-    "ProfileImage",
-    "UpdateUserProfileRequest",
-]
+from dataclasses import dataclass
+from typing import Optional
+from enum import Enum
+
+
+class AppHiveError(Exception):
+    """Base exception for AppHive errors."""
+    class Type(Enum):
+        HTTP_ERROR = "httpError"
+        INVALID_CREDENTIALS = "invalidCredentials"
+        INVALID_REQUEST = "invalidRequest"
+        INVALID_RESPONSE = "invalidResponse"
+        NETWORK_ERROR = "networkError"
+        SERVER_ERROR = "serverError"
+        UNKNOWN_ERROR = "unknownError"
+
+    def __init__(self, error_type: Type, message: str):
+        self.error_type = error_type
+        super().__init__(f"{error_type.value}: {message}")
+
+
+@dataclass
+class Address:
+    """Data class for address information."""
+    street: str
+    city: str
+    state: str
+    postal_code: str
+    country: str
+
+
+@dataclass
+class ProfileImage:
+    """Data class for profile image information."""
+    url: str
+    width: int
+    height: int
+
+
+@dataclass
+class UpdateUserProfileRequest:
+    """Data class for user profile update request."""
+    name: Optional[str] = None
+    email: Optional[str] = None
+    phone: Optional[str] = None
+    address: Optional[Address] = None
+    profile_image: Optional[ProfileImage] = None
 
 
 class AppHive:
-    """
-    A Python class for interacting with the AppHive API.
-    """
+    """Main class for interacting with the AppHive API."""
 
-    BASE_URL = "https://freddy-api.aitronos.com"
-
-    def __init__(self, user_token: str = None, username: str = None, password: str = None):
+    def __init__(self, user_token: str, is_secret_key: bool = False):
         """
-        Initialize the AppHive class with either a user token or user credentials.
+        Initialize the AppHive class.
 
-        :param user_token: The API token for authentication (optional).
-        :param username: The user's email or username for login (optional).
-        :param password: The user's password for login (optional).
-        :raises ValueError: If neither a user token nor valid credentials are provided.
+        Args:
+            user_token (str): The authentication token for API requests.
+            is_secret_key (bool): Whether the token is a secret key.
         """
-        if user_token:
-            self._user_token = user_token
-        elif username and password:
-            self._user_token = self._authenticate_and_get_token(username, password)
-        else:
-            raise ValueError("You must provide either an API token or valid username and password.")
+        if not user_token:
+            raise ValueError("User token cannot be empty")
+        self._user_token = user_token
+        self._is_secret_key = is_secret_key
+        self._base_url = "https://freddy-api.aitronos.com"
 
     @property
-    def authentication(self) -> Authentication:
-        """
-        Provides access to the Authentication class.
-
-        :return: An instance of the Authentication class.
-        """
-        return Authentication(self.BASE_URL)
-
-    @property
-    def user_management(self) -> UserManagement:
-        """
-        Provides access to the UserManagement class.
-
-        :return: An instance of the UserManagement class.
-        """
-        return UserManagement(self.BASE_URL, self.user_token)
-
-    @property
-    def user_token(self) -> str:
-        """
-        Getter for the user token.
-
-        :return: The user token as a string.
-        """
-        return self._user_token
-
-    @user_token.setter
-    def user_token(self, value: str):
-        """
-        Setter for the user token.
-
-        :param value: The new user token.
-        :raises ValueError: If the user token is empty.
-        """
-        if not value:
-            raise ValueError("AppHive API Key cannot be empty")
-        self._user_token = value
-
-    def _authenticate_and_get_token(self, username: str, password: str) -> str:
-        """
-        Authenticate the user with their credentials and retrieve the API token.
-
-        :param username: The user's email or username.
-        :param password: The user's password.
-        :return: The API token as a string.
-        :raises AppHiveError: If authentication fails.
-        """
-        auth = Authentication(self.BASE_URL)
-        response = auth.login(username, password)
-
-        if isinstance(response, LoginResponse):
-            return response.token
-        elif isinstance(response, AppHiveError):
-            raise ValueError(f"Failed to authenticate: {response.description}")
-        else:
-            raise ValueError("Unexpected error during authentication.")
+    def user_management(self):
+        """Get the user management component."""
+        from .user_management import UserManagement
+        return UserManagement(
+            user_token=self._user_token,
+            is_secret_key=self._is_secret_key
+        ) 
