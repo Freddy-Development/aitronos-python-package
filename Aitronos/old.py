@@ -1,2 +1,0 @@
-
-# Setup basic logging

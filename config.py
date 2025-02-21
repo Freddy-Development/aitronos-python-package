@@ -112,3 +112,16 @@ class Config:
                 "Couldn't find key 'test_full_name' in 'config.json'. Please ensure the file contains this key."
             )
         return config["test_full_name"]
+
+    @classmethod
+    def test_org_id(cls) -> str:
+        """Get the test organization ID."""
+        return cls._get_config_value("test_org_id")
+
+    @classmethod
+    def _get_config_value(cls, key: str) -> str:
+        """Get a value from the config file."""
+        config = cls._get_config_file()
+        if key not in config:
+            raise KeyError(f"Config key '{key}' not found")
+        return config[key]

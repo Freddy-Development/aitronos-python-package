@@ -1,4 +1,4 @@
-from src.main.hello_world import main  # Update this path as necessary
+from ..main.hello_world import main  # Using relative import
 
 
 class TestHelloWorld:

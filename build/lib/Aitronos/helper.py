@@ -168,7 +168,7 @@ def perform_request(
     body: Optional[Dict[str, Any]] = None,
     empty_response: bool = False,
     callback: Callable[[Union[Any, FreddyError]], None] = None,
-) -> None:
+) -> requests.Response:
     """
     Performs an HTTP request and processes the response.
 
@@ -178,6 +178,7 @@ def perform_request(
     :param body: Request body as a dictionary.
     :param empty_response: Whether the response is expected to be empty.
     :param callback: A function to handle the result.
+    :return: The response object.
     """
     url = f"{config.base_url}{endpoint}"
     headers = {
@@ -198,16 +199,29 @@ def perform_request(
                 error_details = response.json().get("error", "Unknown Error")
             except json.JSONDecodeError:
                 error_details = response.text
-            callback(FreddyError(FreddyError.Type.HTTP_ERROR, f"{response.status_code}: {error_details}"))
-            return
+            error = FreddyError(FreddyError.Type.HTTP_ERROR, f"{response.status_code}: {error_details}")
+            if callback:
+                callback(error)
+            raise error
 
         if empty_response:
-            callback(None)
-        else:
-            try:
-                callback(response.json())
-            except json.JSONDecodeError:
-                callback(FreddyError(FreddyError.Type.DECODING_ERROR, "Invalid JSON in response"))
+            if callback:
+                callback(None)
+            return response
 
-    except requests.RequestException as e:
-        callback(FreddyError(FreddyError.Type.NETWORK_ISSUE, str(e)))
+        try:
+            data = response.json()
+            if callback:
+                callback(data)
+            return response
+        except json.JSONDecodeError as e:
+            error = FreddyError(FreddyError.Type.DECODING_ERROR, str(e))
+            if callback:
+                callback(error)
+            raise error
+
+    except requests.exceptions.RequestException as e:
+        error = FreddyError(FreddyError.Type.NETWORK_ISSUE, str(e))
+        if callback:
+            callback(error)
+        raise error

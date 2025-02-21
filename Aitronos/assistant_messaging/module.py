@@ -7,7 +7,7 @@ import json
 from dataclasses import dataclass
 from typing import Optional, List, Dict, Union, Callable
 import requests
-from Aitronos.helper import Message, MessageRequestPayload, StreamEvent, is_valid_json
+from aitronos.helper import Message, MessageRequestPayload, StreamEvent, is_valid_json
 
 # Set up basic logging
 logging.basicConfig(level=logging.INFO)
@@ -112,5 +112,3 @@ class AssistantMessaging:
         except requests.RequestException as e:
             log.error(f"Error occurred while making request to {url}. Details: {e}")
             raise Exception(f"Network or connection error during API request. Details: {e}")
-
-    # Add any additional assistant messaging specific methods here 

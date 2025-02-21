@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from Aitronos import Aitronos, LoginResponse, AppHiveError
+from aitronos import Aitronos, LoginResponse, AppHiveError
 from config import Config
 
 
@@ -15,7 +15,7 @@ class TestAuthentication(unittest.TestCase):
         self.invalid_email = "wrong@example.com"
         self.invalid_password = "wrongpass"
 
-    @patch("Aitronos.helper.perform_request")
+    @patch("aitronos.helper.perform_request")
     def test_login_success_with_aitronos(self, mock_perform_request):
         """Test a successful login through Aitronos with credentials."""
         mock_perform_request.return_value = {

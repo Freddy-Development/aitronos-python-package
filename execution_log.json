@@ -1,0 +1,459 @@
+{
+    "id": "d9fefa57-85dc-4a95-8718-ebdddbae6191",
+    "automation_execution_id": "01cfe46c-75b2-4008-a02b-995614e19aa2",
+    "entries": [
+        {
+            "id": "db360d9a-f9de-4707-bdaa-d3773f08e5a8",
+            "timestamp": 1740140435597,
+            "type": "info",
+            "message": "Logger initialized",
+            "component": "Logger",
+            "severity": 1,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0,
+                "status": "Initialized"
+            },
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 7,
+                "function_name": "<module>"
+            }
+        },
+        {
+            "id": "6d1f27c0-c27c-4f18-a457-ecab385461ba",
+            "timestamp": 1740140542683,
+            "type": "info",
+            "message": "Logger initialized",
+            "component": "Logger",
+            "severity": 1,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0,
+                "status": "Initialized"
+            },
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 7,
+                "function_name": "<module>"
+            }
+        },
+        {
+            "id": "9c836eeb-e91e-4080-ae66-8bff90dd1813",
+            "timestamp": 1740140700995,
+            "type": "info",
+            "message": "Logger initialized",
+            "component": "Logger",
+            "severity": 1,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0,
+                "status": "Initialized"
+            },
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 7,
+                "function_name": "<module>"
+            }
+        },
+        {
+            "id": "c7a27063-3372-421d-a4f6-481a91b878c8",
+            "timestamp": 1740140707498,
+            "type": "info",
+            "message": "Logger initialized",
+            "component": "Logger",
+            "severity": 1,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0,
+                "status": "Initialized"
+            },
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 7,
+                "function_name": "<module>"
+            }
+        },
+        {
+            "id": "bba9ed03-4726-452f-b299-2f0a4d503b1f",
+            "timestamp": 1740140707498,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0
+            },
+            "type": "error",
+            "message": "Project initialization failed: Template directory not found at /Users/philliploacker/Documents/GitHub/aitronos-python-package/.venv/lib/python3.12/site-packages/aitronos/cli/commands/hello_world_template",
+            "component": "ProjectInit",
+            "severity": 4,
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 100,
+                "function_name": "create_project_structure"
+            },
+            "metadata": {
+                "exception_type": "FileNotFoundError",
+                "exception_message": "Template directory not found at /Users/philliploacker/Documents/GitHub/aitronos-python-package/.venv/lib/python3.12/site-packages/aitronos/cli/commands/hello_world_template"
+            }
+        },
+        {
+            "id": "b32fa78b-e425-4d7a-802f-0622887965fa",
+            "timestamp": 1740141047317,
+            "type": "info",
+            "message": "Logger initialized",
+            "component": "Logger",
+            "severity": 1,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0,
+                "status": "Initialized"
+            },
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 7,
+                "function_name": "<module>"
+            }
+        },
+        {
+            "id": "6142e10f-4020-4482-ba4c-76440b7fece4",
+            "timestamp": 1740141053728,
+            "type": "info",
+            "message": "Logger initialized",
+            "component": "Logger",
+            "severity": 1,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0,
+                "status": "Initialized"
+            },
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 7,
+                "function_name": "<module>"
+            }
+        },
+        {
+            "id": "407fd662-debf-48bb-a461-8d8ffbb79743",
+            "timestamp": 1740141053729,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0
+            },
+            "type": "error",
+            "message": "Project initialization failed: Template directory not found at /Users/philliploacker/Documents/GitHub/aitronos-python-package/.venv/lib/python3.12/site-packages/aitronos/cli/commands/hello_world_project",
+            "component": "ProjectInit",
+            "severity": 4,
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 102,
+                "function_name": "create_project_structure"
+            },
+            "metadata": {
+                "exception_type": "FileNotFoundError",
+                "exception_message": "Template directory not found at /Users/philliploacker/Documents/GitHub/aitronos-python-package/.venv/lib/python3.12/site-packages/aitronos/cli/commands/hello_world_project"
+            }
+        },
+        {
+            "id": "09d105b1-21a3-418c-8129-b5e93e2a6c07",
+            "timestamp": 1740141060571,
+            "type": "info",
+            "message": "Logger initialized",
+            "component": "Logger",
+            "severity": 1,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0,
+                "status": "Initialized"
+            },
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 7,
+                "function_name": "<module>"
+            }
+        },
+        {
+            "id": "9ed93059-d181-4fc7-868f-651571d81006",
+            "timestamp": 1740141060572,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0
+            },
+            "type": "error",
+            "message": "Project initialization failed: Template directory not found at /Users/philliploacker/Documents/GitHub/aitronos-python-package/.venv/lib/python3.12/site-packages/aitronos/cli/commands/hellow_world_to_parameter",
+            "component": "ProjectInit",
+            "severity": 4,
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 102,
+                "function_name": "create_project_structure"
+            },
+            "metadata": {
+                "exception_type": "FileNotFoundError",
+                "exception_message": "Template directory not found at /Users/philliploacker/Documents/GitHub/aitronos-python-package/.venv/lib/python3.12/site-packages/aitronos/cli/commands/hellow_world_to_parameter"
+            }
+        },
+        {
+            "id": "c16b1548-a5b3-410a-9979-4852725eda95",
+            "timestamp": 1740141093812,
+            "type": "info",
+            "message": "Logger initialized",
+            "component": "Logger",
+            "severity": 1,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0,
+                "status": "Initialized"
+            },
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 7,
+                "function_name": "<module>"
+            }
+        },
+        {
+            "id": "6be82676-28bf-4d35-94f4-a80f1e6e84b7",
+            "timestamp": 1740141100219,
+            "type": "info",
+            "message": "Logger initialized",
+            "component": "Logger",
+            "severity": 1,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0,
+                "status": "Initialized"
+            },
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 7,
+                "function_name": "<module>"
+            }
+        },
+        {
+            "id": "68f761a2-c276-4c1d-86f3-0565d509ce86",
+            "timestamp": 1740141107292,
+            "type": "info",
+            "message": "Logger initialized",
+            "component": "Logger",
+            "severity": 1,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0,
+                "status": "Initialized"
+            },
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 7,
+                "function_name": "<module>"
+            }
+        },
+        {
+            "id": "e952baa9-1717-4abe-9ef6-a89c9a13e332",
+            "timestamp": 1740141107293,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0
+            },
+            "type": "error",
+            "message": "Project initialization failed: Template directory not found at /Users/philliploacker/Documents/GitHub/aitronos-python-package/.venv/lib/python3.12/site-packages/aitronos/cli/commands/hellow_world_to_parameter",
+            "component": "ProjectInit",
+            "severity": 4,
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 102,
+                "function_name": "create_project_structure"
+            },
+            "metadata": {
+                "exception_type": "FileNotFoundError",
+                "exception_message": "Template directory not found at /Users/philliploacker/Documents/GitHub/aitronos-python-package/.venv/lib/python3.12/site-packages/aitronos/cli/commands/hellow_world_to_parameter"
+            }
+        },
+        {
+            "id": "32f5be7a-2794-4ec4-8ebd-30bacaf337c1",
+            "timestamp": 1740141160278,
+            "type": "info",
+            "message": "Logger initialized",
+            "component": "Logger",
+            "severity": 1,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0,
+                "status": "Initialized"
+            },
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 7,
+                "function_name": "<module>"
+            }
+        },
+        {
+            "id": "99c55a55-e206-4209-9ab8-3ef6abc906b3",
+            "timestamp": 1740141166374,
+            "type": "info",
+            "message": "Logger initialized",
+            "component": "Logger",
+            "severity": 1,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0,
+                "status": "Initialized"
+            },
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 7,
+                "function_name": "<module>"
+            }
+        },
+        {
+            "id": "8e52ad30-dc01-49d1-9e4b-c39be58d815b",
+            "timestamp": 1740141173921,
+            "type": "info",
+            "message": "Logger initialized",
+            "component": "Logger",
+            "severity": 1,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0,
+                "status": "Initialized"
+            },
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 7,
+                "function_name": "<module>"
+            }
+        },
+        {
+            "id": "a9f06380-9016-4232-9012-4ddbc91a1828",
+            "timestamp": 1740141173922,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0
+            },
+            "type": "error",
+            "message": "Project initialization failed: Template directory not found at /Users/philliploacker/Documents/GitHub/aitronos-python-package/.venv/lib/python3.12/site-packages/aitronos/cli/commands/hello_world_to_parameter",
+            "component": "ProjectInit",
+            "severity": 4,
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 102,
+                "function_name": "create_project_structure"
+            },
+            "metadata": {
+                "exception_type": "FileNotFoundError",
+                "exception_message": "Template directory not found at /Users/philliploacker/Documents/GitHub/aitronos-python-package/.venv/lib/python3.12/site-packages/aitronos/cli/commands/hello_world_to_parameter"
+            }
+        },
+        {
+            "id": "93db0018-a13f-471e-b60d-5300c87a6132",
+            "timestamp": 1740145176915,
+            "type": "info",
+            "message": "Logger initialized",
+            "component": "Logger",
+            "severity": 1,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0,
+                "status": "Initialized"
+            },
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 7,
+                "function_name": "<module>"
+            }
+        },
+        {
+            "id": "30575fe0-4287-470a-8593-02254cef9e58",
+            "timestamp": 1740145183986,
+            "type": "info",
+            "message": "Logger initialized",
+            "component": "Logger",
+            "severity": 1,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0,
+                "status": "Initialized"
+            },
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 7,
+                "function_name": "<module>"
+            }
+        },
+        {
+            "id": "c373f32d-bd43-4e34-8f91-87114df2a337",
+            "timestamp": 1740145189335,
+            "type": "info",
+            "message": "Logger initialized",
+            "component": "Logger",
+            "severity": 1,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0,
+                "status": "Initialized"
+            },
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 7,
+                "function_name": "<module>"
+            }
+        },
+        {
+            "id": "5164295d-e437-4791-ae48-602e49021091",
+            "timestamp": 1740145894991,
+            "type": "info",
+            "message": "Logger initialized",
+            "component": "Logger",
+            "severity": 1,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0,
+                "status": "Initialized"
+            },
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 7,
+                "function_name": "<module>"
+            }
+        },
+        {
+            "id": "9b86b2a6-a4e1-46d9-bf69-33c9ca599f97",
+            "timestamp": 1740145917367,
+            "type": "info",
+            "message": "Logger initialized",
+            "component": "Logger",
+            "severity": 1,
+            "progress": {
+                "elapsed_time_seconds": 0,
+                "progress_percentage": 0,
+                "remaining_time_seconds": 0,
+                "status": "Initialized"
+            },
+            "stack_trace": {
+                "file_name": "init_project.py",
+                "line_number": 7,
+                "function_name": "<module>"
+            }
+        }
+    ],
+    "metadata": {}
+}

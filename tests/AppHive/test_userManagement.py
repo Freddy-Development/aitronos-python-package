@@ -1,8 +1,8 @@
 import unittest
 from config import Config
-from Aitronos.AppHive import Address, ProfileImage, UpdateUserProfileRequest
-from Aitronos.AppHive import AppHiveError
-from Aitronos import Aitronos
+from aitronos.AppHive import Address, ProfileImage, UpdateUserProfileRequest
+from aitronos.AppHive import AppHiveError
+from aitronos import Aitronos
 
 class UserManagementTests(unittest.TestCase):
     """Test suite for the UserManagement class with real API calls."""

@@ -5,11 +5,13 @@ Tests for the AssistantMessaging module using real API requests.
 import unittest
 from config import Config
 from typing import List
-from Aitronos import (
+from aitronos import (
     AssistantMessaging,
     Message,
     MessageRequestPayload,
-    StreamEvent
+    StreamEvent,
+    AppHiveError,
+    AssistantMessagingError
 )
 
 

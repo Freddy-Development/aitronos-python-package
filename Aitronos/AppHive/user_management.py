@@ -42,7 +42,7 @@ class UserManagement:
         try:
             response = perform_request(
                 method=HTTPMethod.POST,
-                endpoint="/users/check-username",
+                endpoint="/api/users/check-username",
                 config=self._config,
                 body={
                     "userId": user_id,
@@ -66,7 +66,7 @@ class UserManagement:
         try:
             response = perform_request(
                 method=HTTPMethod.GET,
-                endpoint="/users/profile/basic",
+                endpoint="/v1/api/users/profile/basic",
                 config=self._config
             )
             return response.json()
@@ -86,7 +86,7 @@ class UserManagement:
         try:
             response = perform_request(
                 method=HTTPMethod.GET,
-                endpoint="/users/profile/detailed",
+                endpoint="/v1/api/users/profile/detailed",
                 config=self._config
             )
             return response.json()
@@ -126,7 +126,7 @@ class UserManagement:
 
             response = perform_request(
                 method=HTTPMethod.POST,
-                endpoint="/users/register",
+                endpoint="/v1/api/users/register",
                 config=self._config,
                 body=data
             )
@@ -151,7 +151,7 @@ class UserManagement:
         try:
             response = perform_request(
                 method=HTTPMethod.PUT,
-                endpoint=f"/users/{user_id}/username",
+                endpoint=f"/v1/api/users/{user_id}/username",
                 config=self._config,
                 body={"userName": user_name}
             )
@@ -172,7 +172,7 @@ class UserManagement:
         try:
             perform_request(
                 method=HTTPMethod.PUT,
-                endpoint="/users/profile",
+                endpoint="/v1/api/users/profile",
                 config=self._config,
                 body=profile.to_dict()
             )

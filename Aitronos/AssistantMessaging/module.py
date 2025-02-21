@@ -8,11 +8,12 @@ import re
 from dataclasses import dataclass
 from typing import Optional, List, Dict, Union, Callable
 import requests
-from Aitronos.helper import Message, MessageRequestPayload, StreamEvent, is_valid_json
+from aitronos.helper import Message, MessageRequestPayload, StreamEvent, is_valid_json
 
-# Set up basic logging
-logging.basicConfig(level=logging.INFO)
-log = logging.getLogger(__name__)
+
+class AssistantMessagingError(Exception):
+    """Base exception for AssistantMessaging errors."""
+    pass
 
 
 class AssistantMessaging:
@@ -58,7 +59,7 @@ class AssistantMessaging:
             payload: The message request payload.
             callback: Function to handle stream events.
         """
-        url = f"{self.base_url}/messages/run-stream"
+        url = f"{self.base_url}/api/messages/run-stream"
         headers = {
             "Authorization": self._get_auth_header(),
             "Content-Type": "application/json"
@@ -99,7 +100,7 @@ class AssistantMessaging:
         Returns:
             The API response as a dictionary, or None if the response is empty.
         """
-        url = f"{self.base_url}/messages/run-stream"
+        url = f"{self.base_url}/api/messages/run-stream"
         headers = {
             "Authorization": self._get_auth_header(),
             "Content-Type": "application/json"
