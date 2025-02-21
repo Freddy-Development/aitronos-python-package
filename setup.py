@@ -6,10 +6,19 @@ with open('requirements.txt') as f:
 
 setup(
     name="aitronos",
-    version="2.0.3",
+    version="2.1.0",
     packages=find_packages(),
     package_data={
-        'aitronos': ['cli/template/*', 'cli/template/**/*', 'cli/commands/template/*', 'cli/commands/template/**/*'],
+        'aitronos': [
+            'cli/template/*', 
+            'cli/template/**/*', 
+            'cli/commands/template/*', 
+            'cli/commands/template/**/*',
+            'cli/commands/hello_world_project/*',
+            'cli/commands/hello_world_project/**/*',
+            'cli/commands/hello_world_with_parameters/*',
+            'cli/commands/hello_world_with_parameters/**/*'
+        ],
     },
     include_package_data=True,
     install_requires=[
@@ -49,6 +58,9 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
