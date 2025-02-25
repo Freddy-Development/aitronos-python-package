@@ -6,7 +6,7 @@ with open('requirements.txt') as f:
 
 setup(
     name="aitronos",
-    version="4.4.1",
+    version="4.5.0",
     packages=find_packages(exclude=[
         'tests*',
         '*.tests',
@@ -58,6 +58,16 @@ setup(
         'click>=8.0.0',
         'requests>=2.25.0',
         'typing-extensions>=4.0.0',
+        'setuptools>=68.2.0',
+        'tqdm>=4.66.5',
+        'urllib3>=2.2.2',
+        'certifi>=2024.7.4',
+        'idna>=3.7',
+        'optional>=0.0.1',
+        'httpx>=0.27.2',
+        'regex>=2024.5.15',
+        'pytest>=8.3.3',
+        'aitronos-logger>=0.1.6'
     ] + requirements,
     entry_points={
         "console_scripts": [
