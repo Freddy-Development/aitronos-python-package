@@ -6,7 +6,7 @@ with open('requirements.txt') as f:
 
 setup(
     name="aitronos",
-    version="4.5.6",
+    version="4.5.7",
     packages=find_packages(exclude=[
         'tests*',
         '*.tests',
